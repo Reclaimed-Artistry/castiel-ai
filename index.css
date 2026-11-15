@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #07090F;
+    color: #F1F5F9;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.2);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.35);
+  }
+}
+
+.castiel-prose h1, .castiel-prose h2, .castiel-prose h3 {
+  color: #F8FAFC;
+  font-weight: 600;
+  margin-top: 0.9rem;
+  margin-bottom: 0.45rem;
+}
+.castiel-prose h2 {
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+.castiel-prose h3 {
+  font-size: 0.92rem;
+  color: #C7D2FE;
+}
+.castiel-prose p {
+  margin-bottom: 0.55rem;
+  line-height: 1.6;
+  color: #CBD5E1;
+  font-size: 0.89rem;
+}
+.castiel-prose ul, .castiel-prose ol {
+  margin: 0.4rem 0 0.7rem 1.15rem;
+  color: #CBD5E1;
+  font-size: 0.88rem;
+}
+.castiel-prose ul {
+  list-style-type: disc;
+}
+.castiel-prose ol {
+  list-style-type: decimal;
+}
+.castiel-prose li {
+  margin-bottom: 0.3rem;
+  line-height: 1.55;
+}
+.castiel-prose strong {
+  color: #F8FAFC;
+  font-weight: 600;
+}
+.castiel-prose em {
+  color: #A5B4FC;
+}
+.castiel-prose code {
+  background: rgba(99, 102, 241, 0.14);
+  color: #C7D2FE;
+  padding: 0.12rem 0.35rem;
+  border-radius: 0.3rem;
+  font-size: 0.82rem;
+}
+.castiel-prose pre {
+  background: #0B101D;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  padding: 0.85rem;
+  border-radius: 0.6rem;
+  overflow-x: auto;
+  margin: 0.65rem 0;
+}
+.castiel-prose pre code {
+  background: transparent;
+  padding: 0;
+  color: #E2E8F0;
+}
