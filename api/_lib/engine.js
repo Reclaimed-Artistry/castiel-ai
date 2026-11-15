@@ -1,7 +1,17 @@
 const fs = require('fs')
 const path = require('path')
 
-const CATALOG_PATH = path.join(process.cwd(), 'data', 'catalog.json')
+const CATALOG_CANDIDATES = [
+  path.join(process.cwd(), 'data', 'catalog.json'),
+  path.join(__dirname, '..', '..', 'data', 'catalog.json'),
+]
+
+function resolveCatalogPath() {
+  for (const candidate of CATALOG_CANDIDATES) {
+    if (fs.existsSync(candidate)) return candidate
+  }
+  return CATALOG_CANDIDATES[0]
+}
 
 const STOP_WORDS = new Set([
   'the', 'and', 'for', 'with', 'into', 'from', 'that', 'this', 'are', 'you', 'your',
@@ -144,7 +154,7 @@ let cachedState = null
 
 function getEngineState() {
   if (cachedState) return cachedState
-  const catalog = JSON.parse(fs.readFileSync(CATALOG_PATH, 'utf-8'))
+  const catalog = JSON.parse(fs.readFileSync(resolveCatalogPath(), 'utf-8'))
   const agents = catalog.agents || []
   const agentBySlug = {}
   const runbooksBySlug = {}
