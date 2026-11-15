@@ -9,8 +9,13 @@
 - **17-Tool Export Engine**: Export any specialist or custom squad to Claude Code (`.md`), Cursor (`.mdc`), Codex (`.toml`), Gemini CLI (`.md`), Windsurf (`.windsurfrules`), or Aider (`CONVENTIONS.md`).
 - **Optional External LLM Layer**: Works 100% natively out of the box, with optional Ollama / OpenAI / Anthropic / Gemini / OpenRouter enhancement in Engine Settings.
 
-## Running Castiel AI
+## Running Locally
 ```bash
-/home/user/castiel-ai/start.sh
+./start.sh
 ```
 Serves both the React UI and Python `aiohttp` API on port `3000`.
+
+## Deploying on Vercel
+The repository is configured for Vercel via `vercel.json`:
+- **Frontend (`frontend/`)**: Vite + React + Tailwind CSS built to `frontend/dist` (`cd frontend && npm install --include=dev` and `cd frontend && npm run build`).
+- **Serverless API (`api/`)**: Node.js serverless endpoints (`/api/health`, `/api/catalog`, `/api/agents/[slug]`, `/api/route`, `/api/chat`, `/api/export`, `/api/sessions`) with `data/catalog.json` bundled via `functions.includeFiles`.

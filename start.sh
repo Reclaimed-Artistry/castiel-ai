@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-ROOT="/home/user/castiel-ai"
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 if [ ! -f "$ROOT/data/catalog.json" ]; then
   python3 "$ROOT/backend/catalog.py"

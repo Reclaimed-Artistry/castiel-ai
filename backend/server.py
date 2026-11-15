@@ -9,7 +9,7 @@ from aiohttp import web
 from catalog import load_catalog
 from castiel_engine import CastielSemanticEngine, render_agent_export
 
-BASE_DIR = pathlib.Path("/home/user/castiel-ai")
+BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
 DB_PATH = BASE_DIR / "data" / "castiel.db"
 FRONTEND_DIST = BASE_DIR / "frontend" / "dist"
 

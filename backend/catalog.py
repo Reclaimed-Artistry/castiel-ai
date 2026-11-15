@@ -1,11 +1,13 @@
 import json
+import os
 import pathlib
 import re
 import yaml
 from typing import Any, Dict, List, Optional
 
-REPO_ROOT = pathlib.Path("/home/user/agency-agents-repo")
-DATA_DIR = pathlib.Path("/home/user/castiel-ai/data")
+BASE_DIR = pathlib.Path(__file__).resolve().parent.parent
+REPO_ROOT = pathlib.Path(os.environ.get("AGENCY_AGENTS_REPO", str(BASE_DIR.parent / "agency-agents-repo")))
+DATA_DIR = BASE_DIR / "data"
 CATALOG_CACHE = DATA_DIR / "catalog.json"
 
 SECTION_ALIASES = {
